@@ -1,4 +1,5 @@
 /*********
+  code started with:
   Rui Santos
   Complete project details at http://randomnerdtutorials.com
   Arduino IDE example: Examples > Arduino OTA > BasicOTA.ino
@@ -10,16 +11,15 @@
 #include <ArduinoOTA.h>
 
 // Replace with your network credentials
-const char* ssid = "springtime";
-const char* password = "S8F2c@T36p646";
-const char* host = "laundry";
+const char* ssid = "";
+const char* password = "";
+const char* host = "";                  // hostname for esp board
 
-const int ESP_BUILTIN_LED = 2;
-const int VIB_SENSOR_PINS[] = {4,5};
-const int VIB_SENSOR_COUNT = 2;
-const int POLL_MS = 10;
+const int VIB_SENSOR_PINS[] = {4,5};    // to which pins is a vibration sensor attached?
+const int VIB_SENSOR_COUNT = 2;         // how many pins (must match the element count of VIB_SENSOR_PINS[]
+const int POLL_MS = 10;                 // how frequently are the sensors polled
 
-int sensor_count[] = {};
+int sensor_count[] = {};                // used to tally sensor HIGH values at each POLL
 String sensor_info = "";
 int loop_counter = 0;
 
@@ -74,7 +74,7 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  // initialize sensor array
+  // initialize sensor count array
   for (int i=0;i<VIB_SENSOR_COUNT;i++) {
     sensor_count[i] = 0;
   }
@@ -125,7 +125,7 @@ void loop() {
     if (digitalRead(VIB_SENSOR_PINS[i]) == HIGH) sensor_count[i]++;
   }
   
-  // check for printing
+  // check for one second elapsed time
   if (loop_counter % 1000 == 0) {
     sensor_info = "";
     for (int j=0;j<VIB_SENSOR_COUNT;j++) {
