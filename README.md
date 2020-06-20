@@ -7,8 +7,9 @@ The code is using the very useful ArduinoOTA functionality from the [esp8266/ard
 ## Materials
 I am using these parts:
 
- * HiLetgo ESP8266 NodeMCU (available on [Amazon](https://smile.amazon.com/gp/product/B081CSJV2V))
- * HiLetgo SW-420 Vibration Sensor (also availbe on [Amazon](https://smile.amazon.com/gp/product/B00HJ6ACY2))
+ * HiLetgo ESP8266 NodeMCU (available on [Amazon](https://smile.amazon.com/gp/product/B081CSJV2V) - $14USD for 3)
+ * HiLetgo SW-420 Vibration Sensor (also availabe on [Amazon](https://smile.amazon.com/gp/product/B00HJ6ACY2) - $6USD for 5)
+ * kuman breadboard jumper wires (again on [Amazon](https://smile.amazon.com/gp/product/B01BV3Z342) - $7USD for 120 mixed)
  
  
 ## Overview
@@ -24,7 +25,7 @@ I attach two sensors - one for the washer and one for the dryer. My dryer someti
 
 ## Procedure
 
-Wire up the sensors. They will want three pins - 3V, GND, OUTPUT. On my board I am using pin D4 and the GND/3V pins next to it for one sensor, and D2 along with the other two GND/3V pins on the same side of the board for the second sensor. I have simple header cables going between the devices.
+Wire up the sensors. They will want three pins - 3V, GND, OUTPUT. On my board I am using pins D1 and D2 as labeled on the board, which are GPIO 4 and 5 for some reason. I have simple breadboard jumper wires going between the devices.
 
 The esp8266 is put into a magnetic cup and stuck to one side the washer. The sensors are stuck to the washer and dryer with 3M Command strips.
 
@@ -36,6 +37,10 @@ Edit the laundrynotifyOTA.ino code in this repo with the particulars of your net
 Well, notification isn't here yet. Right now the esp8266 runs a web server on port 80 that displays the number of polling periods each second that the sensor read HIGH. This is roughly "vibes per second" and a value from 0 to 100 with the default polling period of 10ms. I think I will use IFTTT at first, with hopes of a more generic implementation later.
 
 I am also toying with continued notifications and a physical button on the device so that I will keep getting notified until I actually go to the laundry room and hit the button (and presumably do something with the wet clothes).
+
+While ArduinoOTA is pretty great, it is not strictly a requirement. It would probable be good to implement a non-ArduinoOTA version as well.
+
+I will put up some pictures when I get a chance, and have finalized the installation.
 
 Other uses? What else vibrates? Perhaps a dishwasher?
 
