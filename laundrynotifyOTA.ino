@@ -1,5 +1,8 @@
 /*********
-  code started with:
+  this version works with esp8266 + ArduinoOTA
+  project docs at https://arduino-esp8266.readthedocs.io/en/latest/
+  
+  code started from:
   Rui Santos
   Complete project details at http://randomnerdtutorials.com
   Arduino IDE example: Examples > Arduino OTA > BasicOTA.ino
