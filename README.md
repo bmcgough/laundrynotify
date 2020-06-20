@@ -7,8 +7,8 @@ The code is using the very useful ArduinoOTA functionality from the [esp8266/ard
 ## Materials
 I am using these parts:
 
- * HiLetgo ESP8266 NodeMCU (available on [Amazon](https://smile.amazon.com/gp/product/B081CSJV2V)
- * HiLetgo SW-420 Vibration Sensor (also availbe on [Amazon](https://smile.amazon.com/gp/product/B00HJ6ACY2)
+ * HiLetgo ESP8266 NodeMCU (available on [Amazon](https://smile.amazon.com/gp/product/B081CSJV2V))
+ * HiLetgo SW-420 Vibration Sensor (also availbe on [Amazon](https://smile.amazon.com/gp/product/B00HJ6ACY2))
  
  
 ## Overview
